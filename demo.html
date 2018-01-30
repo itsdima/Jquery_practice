@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery demo</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('button.click').click(function(){
+					if($("p.click").is(":hidden")){
+						$("p.click").slideDown();
+					}
+					else {$("p.click").slideUp();}
+				});
+				$('button.hide').click(function(){
+					if($('p.hide').is(":hidden")){
+						$('p.hide').show();
+					}
+					else {
+						$('p.hide').hide(); 
+					}
+				});
+				$('button.toggle').click(function(){
+					$('p.toggle').toggle();
+				});
+				$('button.slidetoggle').click(function(){
+					$('p.slidetoggle').slideToggle(); 
+				}); 
+				$('button.fadein').click(function(){
+					if($('p.fadein').is(":hidden")){
+						$('p.fadein').fadeIn('slow'); 
+					}
+					else{
+						$('p.fadein').fadeOut('slow'); 
+					}
+				}); 
+				$('button.addclass').click(function(){
+					$('p.addclass').addClass('red');
+					
+				}); 
+				$('button.before').click(function(){
+					$('p.before').before('Surprise'); 
+				});
+				$('button.after').click(function(){
+					$('p.before').after('Where did we come from?'); 
+				}); 
+				$('button.append').click(function(){
+					$('p.append').append('<b>RIGHT HERE</b>');
+				});
+				$('button.html').click(function(){
+					$('p.html').html('<h1 style="color: red">I said <b>LOOK AT ME</b></h1>');
+				});
+				$('button.attr').click(function(){
+					$('p.attr').attr('class','red'); 
+				}); 
+				$('button.val').click(function(){
+					$('p.val').toggle();
+					$('input.val').val('Done');
+				});
+				$('button.text').click(function(){
+					$('p.text').text('Except we cant style it'); 
+				}); 
+				$('button.store').click(function(){
+					$('.wonderfulmsg').data('message','I LOVE YOU');
+				});
+				$('button.retrieve').click(function(){
+					alert($('.wonderfulmsg').data('message'));
+				});
+			});
+		</script>
+		<style>
+			div {
+				border-bottom: 2px solid black; 
+			}
+			.container{
+				width: 500px;
+			}
+			.red {
+				color: red; 
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div>
+				<h1>.Click</h1>
+				<button class="click">Click</button>
+				<p class="click">click the button to slide this paragraph up/ click again to slide it back down</p>
+			</div>
+			<div>
+				<h1>.hide</h1>
+				<button class="hide">hide/show</button>
+				<p class="hide">click to hide me</p>
+			</div>
+			<div>
+				<h1>.toggle</h1>
+				<button class="toggle">Toggle</button>
+				<p class="toggle">click the button to toggle this paragraph</p>
+				<p class="toggle" style="display: none;">or this paragraph</p>
+			</div>
+			<div>
+				<h1>.slidetoggle</h1>
+				<button class="slidetoggle">Click</button>
+				<p class="slidetoggle">Same as toggle and slide up...</p>
+				<p class="slidetoggle" style="display: none;">but pretty much way cooler</p>
+			</div>
+			<div>
+				<h1>.fade in/out</h1>
+				<button class="fadein">Fade In/Out</button>
+				<p class="fadein">click the button to fade out this paragraph</p>
+			</div>
+			<div>
+				<h1>.addclass</h1>
+				<button class="addclass">Click</button>
+				<p class="addclass">we will add a class to this paragraph</p>
+			</div>
+			<div>
+				<h1>.before/after</h1>
+				<button class="before" style="display: block;">Before</button>
+				<p class="before">click to add something before and after this paragraph</p>
+				<button class="after" style="display: block;">After</button>
+			</div>
+			<div>
+				<h1>.append</h1>
+				<button class="append">Click</button>
+				<p class="append">We will appned something...</p>
+			</div>
+			<div>
+				<h1>.html</h1>
+				<button class="html">Click</button>
+				<p class="html">Look at me when im talking to you</p>
+			</div>
+			<div>
+				<h1>.attr</h1>
+				<button class="attr">Click</button>
+				<p class="attr">lets add an atribute to make this text red</p>
+			</div>
+			<div class="val">
+				<h1>.val</h1>
+				<input value="Submit" class="val">
+				<button class="val">Submit</button>
+				<p class="val">Click submit to see what happens</p>
+				<p class="val" style="display: none;">Our input used to say 'Submit'!</p>
+			</div>
+			<div class="text">
+				<h1>.text</h1>
+				<button class="text">Click</button>
+				<p class="text">We can do the same thing as HTML</p>
+			</div>
+			<div class="data">
+				<h1>.data</h1>
+				<button class="store">Store a wonderful message</button>
+				<button class="retrieve">RETRIEVE THAT WONDERFUL MESSAGE!</button>
+				<div class="wonderfulmsg"></div>
+			</div>
+		</div>
+
+	</body>
+</html>
